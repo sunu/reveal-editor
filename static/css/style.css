@@ -1,0 +1,26 @@
+#add {
+	position: fixed;
+	top: 40%;
+	right: 5px;
+	background: url('img/plus.png');
+	width: 64px; height: 64px;
+	border: none;
+	cursor: pointer;
+}
+
+#save {
+	position: fixed;
+	top: 5px;
+	right: 5px;
+	background: url('img/save.png');
+	width: 64px; height: 64px;
+	border: none;
+	cursor: pointer;
+	text-indent:-999px;
+}
+
+#toolbar {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
