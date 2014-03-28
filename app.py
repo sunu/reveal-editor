@@ -30,6 +30,8 @@ def save():
     import uuid
     unique_filename = str(uuid.uuid4()) + '.zip'
 
+    if not os.path.exists('tmp'):
+        os.makedirs('tmp')
     tmp_path = os.path.join(ROOT, 'tmp')
     filepath = os.path.join(tmp_path, unique_filename)
 
