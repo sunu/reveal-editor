@@ -5,7 +5,7 @@ from flask import Flask, send_from_directory
 from flask import render_template
 from flask import request
 
-from utils import zipdir
+from utils import generate_unique_filename, zipdir
 
 app = Flask(__name__, static_url_path='')
 
@@ -27,8 +27,7 @@ def save():
     template = env.get_template('index.html')
     html = template.render(slides=data['html'])
 
-    import uuid
-    unique_filename = str(uuid.uuid4()) + '.zip'
+    unique_filename = generate_unique_filename()
 
     if not os.path.exists('tmp'):
         os.makedirs('tmp')
