@@ -28,7 +28,8 @@
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
-
+		
+		<link rel="stylesheet" href="css/etch.css" />
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 
@@ -88,10 +89,48 @@
 			});
 
 		</script>
-		<script src="http://tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+		<script src="js/etch.js"></script>
 		<script>
+		</script>
+		<script>
+		(function() {
+		    var article = Backbone.Model.extend({
+		        defaults: {
+		            title: 'Default Title',
+		            body: 'Default body text'
+		        }
+		    });
 
-		</script> 
+		    var articleView = Backbone.View.extend({
+		        initialize: function() {
+		            // _.bindAll(this, 'save')
+		            // this.model.bind('save', this.save);
+		            console.log(this);
+		        },
+
+		        events: {
+		            'mousedown section': 'editableClick'
+		        },
+
+		        editableClick: etch.editableInit,
+
+		        save: function() {
+
+		            // normally you would call model.save() here but this is a demo
+		            alert('Saved! Not really, this is just a demo.');
+		        }
+
+		    });
+
+		    $article = $('.slides');
+		    // console.log($article[0].tagName);
+		    var model = new article();
+		    var view = new articleView({model: model, el: $article[0], tagName: $article[0].tagName});
+		})()
+		</script>
 		<script src="js/editor.js"></script>
 
 	</body>
