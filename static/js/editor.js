@@ -8,9 +8,7 @@
     }
 
     function onAddClick () {
-        var template = "<h1>A NEW SLIDE</h1>\
-                    <h3>An awesome one.</h3>\
-                    <p>Sample text.</p>"
+        var template = "<h1>Untitled Slide</h1>"
         var element = document.createElement('section');
         element.innerHTML = template;
         var slides = document.getElementsByClassName('slides')[0];

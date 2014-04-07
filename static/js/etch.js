@@ -322,7 +322,7 @@
         }
       });
 
-      editorModel.set({position: {x: e.pageX - 15, y: e.pageY - 80}});
+      editorModel.set({position: {x: e.pageX - 15, y: e.pageY - 100}});
     }
   });
 
